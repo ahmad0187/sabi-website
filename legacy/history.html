@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabi — Our History</title>
+<meta name="description" content="Sabi — Every Scent. Your Signature. Designer, niche and signature perfumes, delivered gift-ready.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF5F2}
+*{box-sizing:border-box}
+a{color:#2B1D21;text-decoration:none}a:hover{color:#9A5845}
+button{font-family:inherit;cursor:pointer}
+@keyframes sabiFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes sabiFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes sabiPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
+@keyframes sabiPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes sabiDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.s-fade{animation:sabiFadeUp 1s cubic-bezier(.2,.7,.2,1) both}.s-d1{animation-delay:.14s}.s-d2{animation-delay:.28s}
+.s-float{animation:sabiFloat 6s ease-in-out infinite}.s-float-2{animation:sabiFloat 7.5s ease-in-out -2s infinite}.s-float-3{animation:sabiFloat 8.5s ease-in-out -4s infinite}
+.s-pulse{animation:sabiPulse 2s ease-out infinite}
+.s-pop{animation:sabiPop .5s cubic-bezier(.2,.7,.2,1) both}
+.s-dot{animation:sabiDot 1.2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+<script src="assets/js/sabi-runtime.js"></script>
+<script src="assets/js/components.js"></script>
+</head>
+<body>
+<div id="app"></div>
+
+<!-- Page template (rendered by assets/js/sabi-runtime.js) -->
+<template id="sabi-page">
+<div style="width: 100%; min-height: 100vh; background: #FBF5F2; color: #2B1D21; font-family: Jost, system-ui, sans-serif">
+
+<div style="background: #2B1D21; color: #F7EDE8; text-align: center; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 16px">Complimentary discovery vial with every order</div>
+<header style="border-bottom: 1px solid #EADDD7">
+<div style="max-width: 1320px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 26px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; flex: 1 1 360px">
+<a href="index.html">Home</a>
+<a href="product.html">Shop</a>
+<a href="about.html">About Us</a>
+<a href="history.html" style="border-bottom: 1px solid #2B1D21">Our History</a>
+<a href="faq.html">FAQs</a>
+</nav>
+<a href="index.html" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; letter-spacing: 0.32em; line-height: 1; padding-left: 0.32em">SABI</a>
+<div style="display: flex; justify-content: flex-end; flex: 1 1 360px">
+<a href="cart.html" style="min-height: 44px; display: flex; align-items: center; gap: 8px; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1 13H6L5 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Bag</a>
+</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section style="background: #2B1D21; color: #F7EDE8; padding: 120px 32px 112px">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #E7BFB3; font-weight: 500">Our history</p>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(110px, 16vw, 220px); line-height: 0.85; color: #F2DCD6; font-weight: 400">2026</span>
+<h1 class="s-fade s-d1" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(36px, 4vw, 56px); line-height: 1.1">The year a <em>signature</em> was born.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.75; color: #E5D6D1; font-weight: 300; max-width: 640px">Sabi is young, ambitious and just getting started. This is the story of how a simple love of fragrance became a house for every scent — and where we are going next.</p>
+</div>
+</section>
+
+<!-- Timeline -->
+<section style="max-width: 1100px; margin: 0 auto; padding: 112px 32px 80px">
+<div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 56px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Chapter one · 2026</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.05">From an idea <em>to a house.</em></h2>
+</div>
+<div style="display: flex; flex-direction: column; border-left: 1px solid #D9C4BC; margin-left: 8px">
+<sc-for list="{{milestones}}" as="m" hint-placeholder-count="5">
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 0 0 56px 44px">
+<span aria-hidden="true" style="position: absolute; left: -9px; top: 6px; width: 17px; height: 17px; border-radius: 50%; background: {{m.dot}}; border: 3px solid #FBF5F2"></span>
+<div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">{{m.when}}</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 40px; line-height: 1">{{m.year}}</span>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; background: #FFFFFF; border: 1px solid #EADDD7; border-radius: 22px; padding: 30px 32px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 30px; line-height: 1.1">{{m.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.75; color: #5E4A4F">{{m.text}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- The next chapter -->
+<section style="background: #F5E6E1; padding: 104px 32px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: {{accent}}; font-weight: 500">2027 and beyond</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.05">The next <em>chapter</em></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #5E4A4F; max-width: 620px">Our story is only beginning. Here is what we are dreaming of — and working towards.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="background: #FBF5F2; border-radius: 22px; padding: 34px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Coming soon</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">The Attar Atelier</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5E4A4F">A dedicated collection of rich, alcohol-free attars and oud oils.</span>
+</div>
+<div style="background: #FBF5F2; border-radius: 22px; padding: 34px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Coming soon</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">Personal engraving</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5E4A4F">Names and messages engraved on your bottle — the most personal gift.</span>
+</div>
+<div style="background: #FBF5F2; border-radius: 22px; padding: 34px 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Our dream</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">The first Sabi boutique</span>
+<span style="font-size: 15px; line-height: 1.7; color: #5E4A4F">A space to smell, explore and discover every Sabi scent in person.</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 900px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(36px, 4vw, 54px); line-height: 1.08">Be part of the <em>story</em> from the very beginning.</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
+<a href="product.html" style="background: #2B1D21; color: #FBF5F2; padding: 18px 34px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 999px">Shop the first collection</a>
+<a href="about.html" style="border: 1px solid #2B1D21; padding: 17px 32px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 999px">About Sabi</a>
+</div>
+</section>
+
+<footer style="background: #2B1D21; color: #E5D6D1; padding: 56px 32px 36px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 34px; letter-spacing: 0.3em; color: #F7EDE8; line-height: 1">SABI</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: #E7BFB3">Every Scent. Your Signature.</span>
+</div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px">
+<a href="index.html" style="color: #E5D6D1">Home</a>
+<a href="product.html" style="color: #E5D6D1">Shop</a>
+<a href="about.html" style="color: #E5D6D1">About Us</a>
+<a href="history.html" style="color: #E5D6D1">Our History</a>
+<a href="faq.html" style="color: #E5D6D1">FAQs</a>
+<a href="cart.html" style="color: #E5D6D1">Bag</a>
+</nav>
+<span style="font-size: 13px; color: #BFA9A3">© Sabi Fragrances. All rights reserved.</span>
+</div>
+</footer>
+
+<dc-import name="Chat" hint-size="1px,1px"></dc-import>
+</div>
+</template>
+
+<script src="assets/js/history.js"></script>
+</body>
+</html>

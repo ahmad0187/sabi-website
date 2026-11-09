@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabi — Every Scent. Your Signature.</title>
+<meta name="description" content="Sabi — Every Scent. Your Signature. Designer, niche and signature perfumes, delivered gift-ready.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF5F2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+a{color:#2B1D21;text-decoration:none;transition:color .3s}a:hover{color:#9A5845}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+@keyframes sabiFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes sabiFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes sabiSpin{to{transform:rotate(360deg)}}
+@keyframes sabiMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sabiPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
+@keyframes sabiTwinkle{0%,100%{opacity:.15;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+@keyframes sabiPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes sabiDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.s-fade{animation:sabiFadeUp 1s cubic-bezier(.2,.7,.2,1) both}
+.s-d1{animation-delay:.12s}.s-d2{animation-delay:.26s}.s-d3{animation-delay:.4s}.s-d4{animation-delay:.54s}
+.s-float{animation:sabiFloat 6s ease-in-out infinite}
+.s-float-2{animation:sabiFloat 7.5s ease-in-out -2s infinite}
+.s-float-3{animation:sabiFloat 8.5s ease-in-out -4s infinite}
+.s-spin{animation:sabiSpin 40s linear infinite}
+.s-marquee{display:flex;width:max-content;animation:sabiMarquee 38s linear infinite}
+.s-twinkle{animation:sabiTwinkle 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.s-pulse{animation:sabiPulse 2s ease-out infinite}
+.s-pop{animation:sabiPop .4s cubic-bezier(.2,.7,.2,1) both}
+.s-dot{animation:sabiDot 1.2s ease-in-out infinite}
+.s-lift{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.s-lift:hover{transform:translateY(-8px);box-shadow:0 30px 60px -28px rgba(43,29,33,.45)}
+.s-zoom{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.s-lift:hover .s-zoom{transform:scale(1.07) rotate(-2deg)}
+.s-btn{transition:transform .3s,background-color .3s,color .3s,box-shadow .3s}
+.s-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(43,29,33,.6)}
+.s-btn-dark:hover{background-color:#5A3A44 !important;color:#FBF5F2 !important}
+.s-btn-line:hover{background-color:#2B1D21 !important;color:#FBF5F2 !important}
+.s-reveal-on [data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.s-reveal-on [data-reveal].s-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}.s-reveal-on [data-reveal]{opacity:1;transform:none}}
+</style>
+<script src="assets/js/sabi-runtime.js"></script>
+<script src="assets/js/components.js"></script>
+</head>
+<body>
+<div id="app"></div>
+
+<!-- Page template (rendered by assets/js/sabi-runtime.js) -->
+<template id="sabi-page">
+<div style="width: 100%; min-height: 100vh; background: #FBF5F2; color: #2B1D21; font-family: Jost, system-ui, sans-serif; font-weight: 400; overflow-x: hidden">
+
+<!-- Announcement marquee -->
+<div style="background: #2B1D21; color: #F7EDE8; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; padding: 11px 0; overflow: hidden">
+<div class="s-marquee" aria-label="Announcements">
+<span style="padding: 0 40px">Complimentary discovery vial with every order</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px">Cash on delivery nationwide</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px">Gift-ready Sabi packaging</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px">New arrivals every week</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px" aria-hidden="true">Complimentary discovery vial with every order</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px" aria-hidden="true">Cash on delivery nationwide</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px" aria-hidden="true">Gift-ready Sabi packaging</span><span aria-hidden="true">✦</span>
+<span style="padding: 0 40px" aria-hidden="true">New arrivals every week</span><span aria-hidden="true">✦</span>
+</div>
+</div>
+
+<!-- Header -->
+<header style="position: sticky; top: 0; z-index: 40; background: rgba(251,245,242,0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #EADDD7">
+<div style="max-width: 1360px; margin: 0 auto; padding: 16px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; flex: 1 1 360px">
+<a href="index.html" style="border-bottom: 1px solid #2B1D21; padding-bottom: 2px">Home</a>
+<a href="product.html">Shop</a>
+<a href="about.html">About Us</a>
+<a href="history.html">Our History</a>
+<a href="faq.html">FAQs</a>
+</nav>
+<a href="index.html" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; letter-spacing: 0.34em; line-height: 1; padding-left: 0.34em">SABI</a>
+<div style="display: flex; gap: 4px; align-items: center; justify-content: flex-end; flex: 1 1 360px">
+<button aria-label="Search" style="width: 44px; height: 44px; border: 0; background: transparent; color: #2B1D21; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+</button>
+<button aria-label="Wishlist" style="height: 44px; border: 0; background: transparent; color: #2B1D21; display: flex; align-items: center; gap: 4px; padding: 0 8px; font-size: 13px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>{{wishCount}}
+</button>
+<a href="cart.html" aria-label="Shopping bag" style="height: 44px; color: #2B1D21; display: flex; align-items: center; gap: 8px; padding: 0 8px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1 13H6L5 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+<span style="min-width: 22px; height: 22px; border-radius: 11px; background: #2B1D21; color: #FBF5F2; font-size: 12px; display: flex; align-items: center; justify-content: center; padding: 0 6px">{{bagCount}}</span>
+</a>
+</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section id="top" style="position: relative; background: #F3E3DD; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; right: -180px; top: -200px; width: 720px; height: 720px; border-radius: 50%; background: #EED3CB"></div>
+<div aria-hidden="true" style="position: absolute; left: -140px; bottom: -260px; width: 520px; height: 520px; border-radius: 50%; background: #F7EBE6"></div>
+<div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 80px 32px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<p class="s-fade" style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: {{accent}}; font-weight: 500"><span aria-hidden="true" style="width: 40px; height: 1px; background: currentColor"></span>The House of Sabi · Fine Fragrance</p>
+<h1 class="s-fade s-d1" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(60px, 7vw, 116px); line-height: 0.95; letter-spacing: -0.01em">Every Scent.<br><em style="font-weight: 400; color: #7A3E4A">Your Signature.</em></h1>
+<p class="s-fade s-d2" style="margin: 0; font-size: 18px; line-height: 1.75; color: #5E4A4F; max-width: 500px; font-weight: 300">The world’s most loved perfumes and our own signature blends — from soft florals to smoky oud — curated in one beautiful place, delivered gift-ready to your door.</p>
+<div class="s-fade s-d3" style="display: flex; flex-wrap: wrap; gap: 14px; padding-top: 6px">
+<a class="s-btn s-btn-dark" href="product.html" style="background: #2B1D21; color: #FBF5F2; padding: 19px 36px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px; display: flex; align-items: center; gap: 12px">Shop the Collection<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="s-btn s-btn-line" href="#quiz" style="border: 1px solid #2B1D21; color: #2B1D21; padding: 18px 34px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px">Find Your Scent</a>
+</div>
+<div class="s-fade s-d4" style="display: flex; flex-wrap: wrap; gap: 28px; padding-top: 18px; font-size: 13px; color: #5E4A4F; letter-spacing: 0.06em">
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.5"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"></path></svg>Designer &amp; niche brands</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.5"><rect x="9" y="2" width="6" height="5" rx="1"></rect><rect x="7" y="7" width="10" height="15" rx="3"></rect></svg>Try before you commit</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.5"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>Cash on delivery</span>
+</div>
+</div>
+
+<div class="s-fade s-d2" style="position: relative; height: 620px; display: flex; align-items: center; justify-content: center">
+<svg class="s-spin" aria-hidden="true" width="540" height="540" viewBox="0 0 540 540" style="position: absolute; max-width: 100%">
+<defs><path id="sabi-ring" d="M270,270 m-240,0 a240,240 0 1,1 480,0 a240,240 0 1,1 -480,0"></path></defs>
+<circle cx="270" cy="270" r="214" fill="none" stroke="#D9B8AE" stroke-width="1"></circle>
+<text font-family="Jost, sans-serif" font-size="14" letter-spacing="9" fill="#7A3E4A"><textPath href="#sabi-ring">EVERY SCENT · YOUR SIGNATURE · SABI FINE FRAGRANCE · EVERY SCENT · YOUR SIGNATURE · </textPath></text>
+</svg>
+<div aria-hidden="true" style="position: absolute; width: 380px; height: 380px; border-radius: 50%; background: #FBF5F2; box-shadow: inset 0 -30px 60px rgba(201,162,122,0.18)"></div>
+<div class="s-float-2" style="position: absolute; left: 6%; bottom: 90px; width: 150px; height: 240px"><dc-import name="Bottle" shape="round" liquid="#E8C46A" cap="#C9A27A" label="" hint-size="100%,100%"></dc-import></div>
+<div class="s-float" style="position: relative; width: 290px; height: 464px"><dc-import name="Bottle" shape="classic" liquid="#D97E8A" cap="#C9A27A" label="SABI" hint-size="100%,100%"></dc-import></div>
+<div class="s-float-3" style="position: absolute; right: 5%; bottom: 70px; width: 140px; height: 224px"><dc-import name="Bottle" shape="tall" liquid="#2F4A6B" cap="#1E1A1C" label="" hint-size="100%,100%"></dc-import></div>
+<svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 600 620" style="position: absolute; inset: 0; pointer-events: none">
+<path class="s-twinkle" d="M120 140 l4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 14 -4z" fill="#C9A27A"></path>
+<path class="s-twinkle" style="animation-delay: 1s" d="M480 120 l3 10 10 3 -10 3 -3 10 -3 -10 -10 -3 10 -3z" fill="#C9A27A"></path>
+<path class="s-twinkle" style="animation-delay: 1.8s" d="M520 420 l4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 14 -4z" fill="#B97F6A"></path>
+<path class="s-twinkle" style="animation-delay: 2.4s" d="M80 470 l3 10 10 3 -10 3 -3 10 -3 -10 -10 -3 10 -3z" fill="#C9A27A"></path>
+</svg>
+<div class="s-float-3" style="position: absolute; top: 40px; right: 2%; background: #FBF5F2; border-radius: 18px; padding: 14px 18px; box-shadow: 0 20px 40px -24px rgba(43,29,33,0.5); display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">New in</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 22px">Sabi Rose Velours</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Brands marquee -->
+<section aria-label="Brands we carry" style="border-bottom: 1px solid #EADDD7; padding: 30px 0; overflow: hidden; background: #FBF5F2">
+<div class="s-marquee" style="animation-duration: 45s; align-items: center">
+<sc-for list="{{brandsLoop}}" as="b" hint-placeholder-count="10">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E4A4F; padding: 0 42px; white-space: nowrap">{{b.name}}</span>
+<span aria-hidden="true" style="color: #C9A27A">✦</span>
+</sc-for>
+</div>
+</section>
+
+<!-- Scent families -->
+<section id="families" style="max-width: 1360px; margin: 0 auto; padding: 120px 32px">
+<div data-reveal style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 52px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Shop by scent family</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(42px, 4.6vw, 68px); line-height: 1.02">Every mood has a <em>fragrance.</em></h2>
+</div>
+<a href="product.html" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid #2B1D21; padding-bottom: 4px">View all scents</a>
+</div>
+<div data-reveal style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px">
+<sc-for list="{{families}}" as="fam" hint-placeholder-count="6">
+<a class="s-lift" href="product.html" style="display: flex; flex-direction: column; background: {{fam.bg}}; border-radius: 26px; overflow: hidden">
+<div style="height: 220px; display: flex; align-items: flex-end; justify-content: center; padding-top: 24px">
+<div class="s-zoom" style="width: 120px; height: 192px"><dc-import name="Bottle" shape="{{fam.shape}}" liquid="{{fam.liquid}}" cap="{{fam.cap}}" label="" hint-size="100%,100%"></dc-import></div>
+</div>
+<div style="padding: 18px 22px 24px; display: flex; flex-direction: column; gap: 6px; background: rgba(255,255,255,0.55)">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; line-height: 1">{{fam.name}}</span>
+<span style="font-size: 13px; line-height: 1.5; color: #5E4A4F">{{fam.notes}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+
+<!-- Bestsellers -->
+<section id="shop" style="background: #F5E6E1; padding: 120px 32px">
+<div style="max-width: 1360px; margin: 0 auto">
+<div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; margin-bottom: 40px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Most loved this season</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(42px, 4.6vw, 68px); line-height: 1.02">Bestsellers, <em>beloved.</em></h2>
+</div>
+<div role="tablist" aria-label="Filter collection" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 52px">
+<sc-for list="{{tabs}}" as="tab" hint-placeholder-count="4">
+<sc-if value="{{tab.active}}" hint-placeholder-val="{{false}}">
+<button class="s-btn" role="tab" aria-selected="true" onClick="{{tab.pick}}" style="min-height: 46px; padding: 0 28px; border-radius: 999px; border: 1px solid #2B1D21; background: #2B1D21; color: #FBF5F2; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase">{{tab.label}}</button>
+</sc-if>
+<sc-if value="{{tab.inactive}}" hint-placeholder-val="{{true}}">
+<button class="s-btn s-btn-line" role="tab" aria-selected="false" onClick="{{tab.pick}}" style="min-height: 46px; padding: 0 28px; border-radius: 999px; border: 1px solid #C9B2AA; background: transparent; color: #2B1D21; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase">{{tab.label}}</button>
+</sc-if>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px">
+<sc-for list="{{products}}" as="p" hint-placeholder-count="8">
+<article class="s-lift s-pop" style="background: #FBF5F2; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; height: 340px; display: flex; align-items: center; justify-content: center; background: {{p.bg}}; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; width: 230px; height: 230px; border-radius: 50%; background: rgba(255,255,255,0.45)"></div>
+<span style="position: absolute; top: 18px; left: 18px; background: #FBF5F2; border-radius: 999px; padding: 7px 14px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase">{{p.gender}}</span>
+<sc-if value="{{p.wished}}" hint-placeholder-val="{{false}}">
+<button onClick="{{p.wish}}" aria-pressed="true" aria-label="Remove {{p.title}} from wishlist" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #FBF5F2; color: #B03A4E; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>
+</button>
+</sc-if>
+<sc-if value="{{p.notWished}}" hint-placeholder-val="{{true}}">
+<button onClick="{{p.wish}}" aria-pressed="false" aria-label="Add {{p.title}} to wishlist" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #FBF5F2; color: #2B1D21; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>
+</button>
+</sc-if>
+<div class="s-zoom" style="position: relative; width: 160px; height: 256px"><dc-import name="Bottle" shape="{{p.shape}}" liquid="{{p.liquid}}" cap="{{p.cap}}" label="" hint-size="100%,100%"></dc-import></div>
+</div>
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: {{accent}}; font-weight: 500">{{p.brand}}</span>
+<h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 28px; line-height: 1.05"><a href="product.html">{{p.title}}</a></h3>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5E4A4F; flex-grow: 1">{{p.family}} · {{p.notes}}</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid #EADDD7; margin-top: 6px">
+<span style="font-size: 16px; font-weight: 500">Rs. [PRICE]</span>
+<button class="s-btn s-btn-dark" onClick="{{p.add}}" aria-label="Add {{p.title}} to bag" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: #2B1D21; color: #FBF5F2; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; display: flex; align-items: center; gap: 8px">
+<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"></path></svg>Add</button>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+<sc-if value="{{toast}}" hint-placeholder-val="{{false}}">
+<div class="s-pop" role="status" style="position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 70; background: #2B1D21; color: #FBF5F2; border-radius: 999px; padding: 14px 22px; display: flex; align-items: center; gap: 16px; font-size: 14px; box-shadow: 0 20px 40px -18px rgba(0,0,0,0.5)">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E7BFB3" stroke-width="2"><path d="M5 12l5 5 9-10"></path></svg>
+<span>{{toast}} added to your bag</span>
+<a href="cart.html" style="color: #E7BFB3; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase">View bag</a>
+</div>
+</sc-if>
+</div>
+</section>
+
+<!-- Spotlight -->
+<section style="background: #2B1D21; color: #F7EDE8; padding: 120px 32px; overflow: hidden">
+<div style="max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 64px; align-items: center">
+<div data-reveal style="position: relative; height: 600px; display: flex; align-items: center; justify-content: center">
+<div aria-hidden="true" style="position: absolute; width: 460px; height: 460px; border-radius: 50%; background: #3A282E"></div>
+<div aria-hidden="true" class="s-spin" style="position: absolute; width: 540px; height: 540px; border-radius: 50%; border: 1px dashed #6B4F57"></div>
+<div class="s-float" style="position: relative; width: 260px; height: 416px"><dc-import name="Bottle" shape="round" liquid="#C8423A" cap="#C9A27A" label="" hint-size="100%,100%"></dc-import></div>
+<div class="s-float-2" style="position: absolute; left: 2%; top: 110px; background: #FBF5F2; color: #2B1D21; border-radius: 16px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Top</span><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px">Saffron · Jasmine</span>
+</div>
+<div class="s-float-3" style="position: absolute; right: 0; top: 260px; background: #FBF5F2; color: #2B1D21; border-radius: 16px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Heart</span><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px">Amberwood · Ambergris</span>
+</div>
+<div class="s-float" style="position: absolute; left: 10%; bottom: 70px; background: #FBF5F2; color: #2B1D21; border-radius: 16px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Base</span><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px">Fir resin · Cedar</span>
+</div>
+</div>
+<div data-reveal style="display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: #E7BFB3; font-weight: 500">Fragrance of the month</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(46px, 5vw, 76px); line-height: 1">Baccarat Rouge 540</h2>
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #E5D6D1">Maison Francis Kurkdjian · Eau de Parfum</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #E5D6D1; font-weight: 300; max-width: 520px">A luminous, airy amber with a glowing trail of saffron and ambergris — the scent people stop you to ask about.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding-top: 6px">
+<a class="s-btn" href="product.html" style="background: #F7EDE8; color: #2B1D21; padding: 19px 36px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px">Discover it</a>
+<span style="font-size: 17px">Rs. [PRICE]</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Brand story -->
+<section style="max-width: 1360px; margin: 0 auto; padding: 120px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 72px; align-items: center">
+<div data-reveal style="position: relative; height: 560px; border-radius: 280px 280px 28px 28px; background: #F2DCD6; display: flex; align-items: flex-end; justify-content: center; gap: 10px; overflow: hidden; padding-bottom: 40px">
+<div aria-hidden="true" style="position: absolute; top: 60px; width: 300px; height: 300px; border-radius: 50%; border: 1px solid #D9B8AE"></div>
+<div class="s-float-2" style="width: 120px; height: 192px"><dc-import name="Bottle" shape="attar" liquid="#7A2E3A" cap="#C9A27A" label="" hint-size="100%,100%"></dc-import></div>
+<div class="s-float" style="width: 180px; height: 288px"><dc-import name="Bottle" shape="classic" liquid="#E2A9A6" cap="#C9A27A" label="SABI" hint-size="100%,100%"></dc-import></div>
+<div class="s-float-3" style="width: 110px; height: 176px"><dc-import name="Bottle" shape="round" liquid="#EADBD3" cap="#B8B8BC" label="" hint-size="100%,100%"></dc-import></div>
+</div>
+<div data-reveal style="display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: {{accent}}; font-weight: 500">Our story</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(42px, 4.6vw, 68px); line-height: 1.02">One house.<br><em>Every kind of beautiful.</em></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #5E4A4F; font-weight: 300">Sabi was born from a simple belief: fragrance is the most personal thing you wear. So we brought every kind of scent under one roof — iconic designer perfumes, rare niche finds, traditional attar and our own Sabi signatures.</p>
+<a class="s-btn s-btn-line" href="about.html" style="align-self: flex-start; border: 1px solid #2B1D21; padding: 17px 32px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px">Discover the house</a>
+</div>
+</section>
+
+<!-- Find your scent -->
+<section id="quiz" style="background: #FFFFFF; border-top: 1px solid #EADDD7; border-bottom: 1px solid #EADDD7; padding: 112px 32px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 52px; text-align: center">
+<div data-reveal style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: {{accent}}; font-weight: 500">New to fragrance?</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(42px, 4.6vw, 64px); line-height: 1.02">Find your scent in <em>60 seconds.</em></h2>
+</div>
+<div data-reveal style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%">
+<div class="s-lift" style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 28px; border-radius: 26px; background: #FBF5F2">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #F2DCD6; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: {{accent}}">01</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">Choose a mood</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Romantic, fresh, bold or cozy — tell us how you want to feel.</span>
+</div>
+<div class="s-lift" style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 28px; border-radius: 26px; background: #FBF5F2">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #F2DCD6; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: {{accent}}">02</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">Pick your notes</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Flowers, fruits, woods or spice — choose what you already love.</span>
+</div>
+<div class="s-lift" style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 28px; border-radius: 26px; background: #FBF5F2">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #F2DCD6; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: {{accent}}">03</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px">Meet your match</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Get three perfumes picked for you, with a vial to try first.</span>
+</div>
+</div>
+<a class="s-btn s-btn-dark" href="faq.html" style="background: #2B1D21; color: #FBF5F2; padding: 19px 38px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px">Take the scent quiz</a>
+</div>
+</section>
+
+<!-- Discovery set -->
+<section id="discovery" style="padding: 112px 32px">
+<div data-reveal style="max-width: 1360px; margin: 0 auto; background: #2B1D21; color: #F7EDE8; border-radius: 36px; padding: 72px 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center; overflow: hidden">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: #E7BFB3; font-weight: 500">The perfect gift</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(42px, 4.6vw, 68px); line-height: 1.02">The Discovery <em>Edit</em></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.8; color: #E5D6D1; font-weight: 300; max-width: 480px">Eight mini vials, one from every scent family. Try them all, fall in love with one — then make it your signature.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; padding-top: 6px">
+<a class="s-btn" href="product.html" style="background: #F7EDE8; color: #2B1D21; padding: 19px 36px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 999px">Shop the set</a>
+<span style="font-size: 17px">Rs. [PRICE]</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 4px">
+<sc-for list="{{vials}}" as="v" hint-placeholder-count="8">
+<div class="{{v.cls}}" style="width: 66px; height: 132px"><dc-import name="Bottle" shape="tall" liquid="{{v.liquid}}" cap="#C9A27A" label="" hint-size="100%,100%"></dc-import></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- Promises -->
+<section style="max-width: 1360px; margin: 0 auto; padding: 0 32px 112px">
+<div data-reveal style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-top: 1px solid #D9C4BC">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.4"><path d="M12 3c2 4 6 5 6 10a6 6 0 0 1-12 0c0-5 4-6 6-10z"></path></svg>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px">Every scent, one house</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Designer icons, niche gems, attars and Sabi signatures.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-top: 1px solid #D9C4BC">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.4"><rect x="9" y="2" width="6" height="5" rx="1"></rect><rect x="7" y="7" width="10" height="15" rx="3"></rect></svg>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px">Try before you commit</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">A discovery vial in every order, so you always choose with confidence.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-top: 1px solid #D9C4BC">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.4"><rect x="3" y="9" width="18" height="12" rx="1"></rect><path d="M3 9h18M12 9v12M12 9c-2-4-6-4-6-1s6 1 6 1zM12 9c2-4 6-4 6-1s-6 1-6 1z"></path></svg>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px">Gift-ready packaging</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Every bottle arrives boxed and wrapped, ready to give.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-top: 1px solid #D9C4BC">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2B1D21" stroke-width="1.4"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 26px">Delivered to your door</span>
+<span style="font-size: 15px; line-height: 1.6; color: #5E4A4F">Fast, careful delivery with cash on delivery available.</span>
+</div>
+</div>
+</section>
+
+<!-- Newsletter -->
+<section style="background: #F2DCD6; padding: 100px 32px">
+<div data-reveal style="max-width: 660px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(38px, 4.2vw, 58px); line-height: 1.05">Join the <em>Sabi Circle</em></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4E3B40">Be first to know about new launches, private sales and scent stories.</p>
+<sc-if value="{{notSubscribed}}" hint-placeholder-val="{{true}}">
+<form style="display: flex; flex-wrap: wrap; gap: 12px; width: 100%; justify-content: center">
+<label for="sabi-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="sabi-email" type="email" placeholder="Your email address" style="flex: 1 1 280px; min-height: 56px; padding: 0 24px; border-radius: 999px; border: 1px solid #C9A99F; background: #FBF5F2; font-size: 15px; color: #2B1D21">
+<button class="s-btn s-btn-dark" type="button" onClick="{{subscribe}}" style="min-height: 56px; padding: 0 34px; border-radius: 999px; border: 0; background: #2B1D21; color: #FBF5F2; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Subscribe</button>
+</form>
+</sc-if>
+<sc-if value="{{subscribed}}" hint-placeholder-val="{{false}}">
+<p class="s-pop" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px">Welcome to the Circle — check your inbox soon.</p>
+</sc-if>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background: #2B1D21; color: #E5D6D1; padding: 80px 32px 40px">
+<div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 42px; letter-spacing: 0.32em; color: #F7EDE8; line-height: 1">SABI</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #E7BFB3">Every Scent. Your Signature.</span>
+</div>
+<nav aria-label="Shop" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #BFA9A3">Shop</span>
+<a href="product.html" style="color: #E5D6D1">Women</a>
+<a href="product.html" style="color: #E5D6D1">Men</a>
+<a href="product.html" style="color: #E5D6D1">Unisex</a>
+<a href="product.html" style="color: #E5D6D1">Oud &amp; Attar</a>
+<a href="product.html" style="color: #E5D6D1">Gift Sets</a>
+</nav>
+<nav aria-label="Help" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #BFA9A3">Help</span>
+<a href="faq.html" style="color: #E5D6D1">FAQs</a>
+<a href="faq.html" style="color: #E5D6D1">Shipping &amp; Returns</a>
+<a href="about.html" style="color: #E5D6D1">About Us</a>
+<a href="history.html" style="color: #E5D6D1">Our History</a>
+</nav>
+<nav aria-label="Follow" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #BFA9A3">Follow Sabi</span>
+<a href="#top" style="color: #E5D6D1">Instagram</a>
+<a href="#top" style="color: #E5D6D1">TikTok</a>
+<a href="#top" style="color: #E5D6D1">Facebook</a>
+</nav>
+</div>
+<div style="border-top: 1px solid #4A383E; padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #BFA9A3">
+<span>© Sabi Fragrances. All rights reserved.</span>
+<span>Brand names shown are trademarks of their respective owners.</span>
+</div>
+</div>
+</footer>
+
+<dc-import name="Chat" hint-size="1px,1px"></dc-import>
+</div>
+</template>
+
+<script src="assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body{margin:0;background:#FBF5F2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+a{color:#2B1D21;text-decoration:none;transition:color .3s}a:hover{color:#9A5845}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+@keyframes sabiFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes sabiFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes sabiSpin{to{transform:rotate(360deg)}}
+@keyframes sabiMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sabiPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 20px rgba(37,211,102,0)}}
+@keyframes sabiTwinkle{0%,100%{opacity:.15;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+@keyframes sabiPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes sabiDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.s-fade{animation:sabiFadeUp 1s cubic-bezier(.2,.7,.2,1) both}
+.s-d1{animation-delay:.12s}.s-d2{animation-delay:.26s}.s-d3{animation-delay:.4s}.s-d4{animation-delay:.54s}
+.s-float{animation:sabiFloat 6s ease-in-out infinite}
+.s-float-2{animation:sabiFloat 7.5s ease-in-out -2s infinite}
+.s-float-3{animation:sabiFloat 8.5s ease-in-out -4s infinite}
+.s-spin{animation:sabiSpin 40s linear infinite}
+.s-marquee{display:flex;width:max-content;animation:sabiMarquee 38s linear infinite}
+.s-twinkle{animation:sabiTwinkle 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.s-pulse{animation:sabiPulse 2s ease-out infinite}
+.s-pop{animation:sabiPop .4s cubic-bezier(.2,.7,.2,1) both}
+.s-dot{animation:sabiDot 1.2s ease-in-out infinite}
+.s-lift{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.s-lift:hover{transform:translateY(-8px);box-shadow:0 30px 60px -28px rgba(43,29,33,.45)}
+.s-zoom{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.s-lift:hover .s-zoom{transform:scale(1.07) rotate(-2deg)}
+.s-btn{transition:transform .3s,background-color .3s,color .3s,box-shadow .3s}
+.s-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(43,29,33,.6)}
+.s-btn-dark:hover{background-color:#5A3A44 !important;color:#FBF5F2 !important}
+.s-btn-line:hover{background-color:#2B1D21 !important;color:#FBF5F2 !important}
+.s-reveal-on [data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.s-reveal-on [data-reveal].s-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}.s-reveal-on [data-reveal]{opacity:1;transform:none}}
+button:disabled{opacity:.6;cursor:default}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #9A5845;outline-offset:2px}
